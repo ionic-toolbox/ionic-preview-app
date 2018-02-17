@@ -26,7 +26,7 @@ export class BasicPage {
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
         <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -35,7 +35,7 @@ export class BasicPage {
 <ion-content>
   <ion-list>
       <ion-item>
-        <ion-avatar item-left>
+        <ion-avatar item-start>
           <img src="{{character.image}}">
         </ion-avatar>
         <h2>{{character.name}}</h2>
@@ -44,7 +44,7 @@ export class BasicPage {
 
       <ion-item *ngFor="let item of character['items']">
         {{item.title}}
-        <ion-note item-right>
+        <ion-note item-end>
           {{item.note}}
         </ion-note>
       </ion-item>
