@@ -4,7 +4,7 @@ import { App, MenuController } from 'ionic-angular';
 
 
 @Component({
-  template: `
+	template: `
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle icon-only>
@@ -21,13 +21,13 @@ import { App, MenuController } from 'ionic-angular';
 `
 })
 export class BasicPage {
-  constructor(app: App, menu: MenuController) {
-    menu.enable(true);
-  }
+	constructor(app: App, menu: MenuController) {
+		menu.enable(true);
+	}
 }
 
 @Component({
-  template: `
+	template: `
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle icon-only>
@@ -46,7 +46,7 @@ export class BasicPage {
 export class PageOne { }
 
 @Component({
-  template: `
+	template: `
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle icon-only>
@@ -65,7 +65,7 @@ export class PageOne { }
 export class PageTwo { }
 
 @Component({
-  template: `
+	template: `
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle icon-only>

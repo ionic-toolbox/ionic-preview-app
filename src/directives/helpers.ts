@@ -1,5 +1,5 @@
 // action sheets
-import { BasicPage as ActionSheetBasicPage} from '../pages/action-sheets/basic/pages';
+import { BasicPage as ActionSheetBasicPage }	from '../pages/action-sheets/basic/basic';
 
 // alerts
 import { BasicPage as AlertBasicPage } from '../pages/alerts/basic/pages';
@@ -126,130 +126,130 @@ import { SegmentPage as ToolbarSegmentPage } from '../pages/toolbar/segment/page
 
 export function hasScrollbar() {
 
-  if (typeof window.top.innerWidth === 'number') {
-    return window.top.innerWidth > window.top.document.documentElement.clientWidth;
-  }
+	if (typeof window.top.innerWidth === 'number') {
+		return window.top.innerWidth > window.top.document.documentElement.clientWidth;
+	}
 
-  // rootElem for quirksmode
-  var rootElem = window.top.document.documentElement || window.top.document.body;
+	// rootElem for quirksmode
+	var rootElem = window.top.document.documentElement || window.top.document.body;
 
-  // Check overflow style property on body for fauxscrollbars
-  var overflowStyle;
+	// Check overflow style property on body for fauxscrollbars
+	var overflowStyle;
 
-  if (typeof rootElem.style !== 'undefined') {
-    overflowStyle = rootElem.style.overflow;
-  }
+	if (typeof rootElem.style !== 'undefined') {
+		overflowStyle = rootElem.style.overflow;
+	}
 
-  overflowStyle = overflowStyle || window.top.getComputedStyle(rootElem, '').overflow;
+	overflowStyle = overflowStyle || window.top.getComputedStyle(rootElem, '').overflow;
 
-  // Also need to check the Y axis overflow
-  var overflowYStyle;
+	// Also need to check the Y axis overflow
+	var overflowYStyle;
 
-  if (typeof rootElem.style !== 'undefined') {
-    overflowYStyle = rootElem.style.overflowY;
-  }
+	if (typeof rootElem.style !== 'undefined') {
+		overflowYStyle = rootElem.style.overflowY;
+	}
 
-  overflowYStyle = overflowYStyle || window.top.getComputedStyle(rootElem, '').overflowY;
+	overflowYStyle = overflowYStyle || window.top.getComputedStyle(rootElem, '').overflowY;
 
-  var contentOverflows = rootElem.scrollHeight > rootElem.clientHeight;
-  var overflowShown = /^(visible|auto)$/.test(overflowStyle) || /^(visible|auto)$/.test(overflowYStyle);
-  var alwaysShowScroll = overflowStyle === 'scroll' || overflowYStyle === 'scroll';
+	var contentOverflows = rootElem.scrollHeight > rootElem.clientHeight;
+	var overflowShown = /^(visible|auto)$/.test(overflowStyle) || /^(visible|auto)$/.test(overflowYStyle);
+	var alwaysShowScroll = overflowStyle === 'scroll' || overflowYStyle === 'scroll';
 
-  return (contentOverflows && overflowShown) || (alwaysShowScroll);
+	return (contentOverflows && overflowShown) || (alwaysShowScroll);
 }
 
 export function getPages() {
-  return {
-    'overview': ActionSheetBasicPage,
-    'action-sheets': ActionSheetBasicPage,
-    'alert': AlertBasicPage,
-    'alert-confirm': AlertConfirmPage,
-    'alert-prompt': AlertPromptPage,
-    'alert-radio': AlertRadioPage,
-    'alert-checkbox': AlertCheckboxPage,
-    'badges': BadgeBasicPage,
-    'buttons': ButtonBasicPage,
-    'block-buttons': ButtonBlockPage,
-    'clear-buttons': ButtonClearPage,
-    'full-buttons': ButtonFullPage,
-    'outline-buttons': ButtonOutlinePage,
-    'round-buttons': ButtonRoundPage,
-    'buttons-in-components': ButtonComponentsPage,
-    'button-sizes': ButtonSizesPage,
-    'fabs': FabBasicPage,
-    'icon-buttons': ButtonIconsPage,
-    'cards': CardBasicPage,
-    'card-header': CardHeaderPage,
-    'card-list': CardListPage,
-    'card-image': CardImagePage,
-    'card-background': CardBackgroundPage,
-    'advanced-cards': CardAdvancedSocialPage,
-    'card-advanced-map': CardAdvancedMapPage,
-    'card-advanced-social': CardAdvancedSocialPage,
-    // 'card-advanced-weather': CardAdvancedWeatherPage,
-    'checkbox': CheckboxBasicPage,
-    'datetime': DatetimeBasicPage,
-    'gestures': GestureBasicPage,
-    'inputs': InputBasicPage,
-    'fixed-inline-labels': InputFixedInlinePage,
-    'floating-labels': InputFloatingPage,
-    'inline-labels': InputInlinePage,
-    'inset-labels': InputInsetPage,
-    'placeholder-labels': InputPlaceholderPage,
-    'stacked-labels': InputStackedPage,
-    'icons': IconBasicPage,
-    'grid': GridBasicPage,
-    'lists': ListBasicPage,
-    'list-lines': ListBasicPage,
-    'list-no-lines': ListNoLinesPage,
-    'avatar-list': ListAvatarPage,
-    'icon-list': ListIconPage,
-    'inset-list': ListInsetPage,
-    'list-dividers': ListDividersPage,
-    'list-headers': ListHeadersPage,
-    'multiline-list': ListMultilinePage,
-    'sliding-list': ListSlidingPage,
-    'thumbnail-list': ListThumbnailPage,
-    'loading': LoadingBasicPage,
-    'menus': MenuBasicPage,
-    'modals': ModalBasicPage,
-    'navigation': NavigationBasicPage,
-    'popovers': PopoverBasicPage,
-    'radio': RadioBasicPage,
-    'range': RangeBasicPage,
-    'segment': SegmentBasicPage,
-    'select': SelectBasicPage,
-    'searchbar': SearchbarBasicPage,
-    'toggle': ToggleBasicPage,
-    'slides': SlideBasicPage,
-    'tabs': TabBasicPage,
-    'tabs-icon': TabIconPage,
-    'tabs-icon-text': TabIconTextPage,
-    'tabs-badges': TabBadgesPage,
-    'toast': ToastBasicPage,
-    'toolbar': ToolbarBasicPage,
-    'toolbar-buttons': ToolbarButtonsPage,
-    'toolbar-segment': ToolbarSegmentPage,
-    'toolbar-searchbar': ToolbarSearchbarPage,
-    'toolbar-colors': ToolbarColorsPage
-  };
+	return {
+		'overview': ActionSheetBasicPage,
+		'action-sheets': ActionSheetBasicPage,
+		'alert': AlertBasicPage,
+		'alert-confirm': AlertConfirmPage,
+		'alert-prompt': AlertPromptPage,
+		'alert-radio': AlertRadioPage,
+		'alert-checkbox': AlertCheckboxPage,
+		'badges': BadgeBasicPage,
+		'buttons': ButtonBasicPage,
+		'block-buttons': ButtonBlockPage,
+		'clear-buttons': ButtonClearPage,
+		'full-buttons': ButtonFullPage,
+		'outline-buttons': ButtonOutlinePage,
+		'round-buttons': ButtonRoundPage,
+		'buttons-in-components': ButtonComponentsPage,
+		'button-sizes': ButtonSizesPage,
+		'fabs': FabBasicPage,
+		'icon-buttons': ButtonIconsPage,
+		'cards': CardBasicPage,
+		'card-header': CardHeaderPage,
+		'card-list': CardListPage,
+		'card-image': CardImagePage,
+		'card-background': CardBackgroundPage,
+		'advanced-cards': CardAdvancedSocialPage,
+		'card-advanced-map': CardAdvancedMapPage,
+		'card-advanced-social': CardAdvancedSocialPage,
+		// 'card-advanced-weather': CardAdvancedWeatherPage,
+		'checkbox': CheckboxBasicPage,
+		'datetime': DatetimeBasicPage,
+		'gestures': GestureBasicPage,
+		'inputs': InputBasicPage,
+		'fixed-inline-labels': InputFixedInlinePage,
+		'floating-labels': InputFloatingPage,
+		'inline-labels': InputInlinePage,
+		'inset-labels': InputInsetPage,
+		'placeholder-labels': InputPlaceholderPage,
+		'stacked-labels': InputStackedPage,
+		'icons': IconBasicPage,
+		'grid': GridBasicPage,
+		'lists': ListBasicPage,
+		'list-lines': ListBasicPage,
+		'list-no-lines': ListNoLinesPage,
+		'avatar-list': ListAvatarPage,
+		'icon-list': ListIconPage,
+		'inset-list': ListInsetPage,
+		'list-dividers': ListDividersPage,
+		'list-headers': ListHeadersPage,
+		'multiline-list': ListMultilinePage,
+		'sliding-list': ListSlidingPage,
+		'thumbnail-list': ListThumbnailPage,
+		'loading': LoadingBasicPage,
+		'menus': MenuBasicPage,
+		'modals': ModalBasicPage,
+		'navigation': NavigationBasicPage,
+		'popovers': PopoverBasicPage,
+		'radio': RadioBasicPage,
+		'range': RangeBasicPage,
+		'segment': SegmentBasicPage,
+		'select': SelectBasicPage,
+		'searchbar': SearchbarBasicPage,
+		'toggle': ToggleBasicPage,
+		'slides': SlideBasicPage,
+		'tabs': TabBasicPage,
+		'tabs-icon': TabIconPage,
+		'tabs-icon-text': TabIconTextPage,
+		'tabs-badges': TabBadgesPage,
+		'toast': ToastBasicPage,
+		'toolbar': ToolbarBasicPage,
+		'toolbar-buttons': ToolbarButtonsPage,
+		'toolbar-segment': ToolbarSegmentPage,
+		'toolbar-searchbar': ToolbarSearchbarPage,
+		'toolbar-colors': ToolbarColorsPage
+	};
 }
 
 export function getPageFor(hash) {
-  return getPages()[hash];
+	return getPages()[hash];
 }
 
 export function debounce(func, wait, immediate) {
-  var timeout;
-  return function () {
-    var context = this, args = arguments;
-    var later = function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
+	var timeout;
+	return function () {
+		var context = this, args = arguments;
+		var later = function () {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
 };
